@@ -114,13 +114,13 @@
 				AD92AA1527C7B89100CC9488 /* AppDelegate.swift */,
 				AD92AA1727C7B89100CC9488 /* SceneDelegate.swift */,
 				AD92AA4B27C7BCAC00CC9488 /* Scene */,
+				AD92AA5827C7C91100CC9488 /* Service */,
+				AD92AA5927C7C91700CC9488 /* Model */,
+				AD92AA5327C7BFF100CC9488 /* Repository */,
 				AD92AA4A27C7BCA500CC9488 /* Entity */,
 				AD92AA1E27C7B89300CC9488 /* Assets.xcassets */,
 				AD92AA2027C7B89300CC9488 /* LaunchScreen.storyboard */,
 				AD92AA2327C7B89300CC9488 /* Info.plist */,
-				AD92AA5327C7BFF100CC9488 /* Repository */,
-				AD92AA5427C7C0C400CC9488 /* Model.swift */,
-				AD92AA5627C7C0E200CC9488 /* Service.swift */,
 			);
 			path = MVVMExampleWithTimeAPI;
 			sourceTree = "<group>";
@@ -165,6 +165,22 @@
 				AD92AA4C27C7BCBF00CC9488 /* Repository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		AD92AA5827C7C91100CC9488 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AD92AA5627C7C0E200CC9488 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AD92AA5927C7C91700CC9488 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD92AA5427C7C0C400CC9488 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
