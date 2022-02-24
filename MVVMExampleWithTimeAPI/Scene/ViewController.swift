@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         addSubviews()
         setLayoutConstraints()
+        NetworkManager().requestTime()
     }
 }
 
