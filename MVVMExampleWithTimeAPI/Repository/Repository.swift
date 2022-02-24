@@ -8,15 +8,15 @@
 import Foundation
 import Alamofire
 
-struct NetworkManager {
-    func requestTime() {
+struct Repository {
+    func fetchNow(completionHandler: @escaping ((Entity) -> Void)) {
         guard let url = URL(string: "http://worldclockapi.com/api/json/utc/now") else { return }
         
         AF.request(url, method: .get)
-            .responseDecodable(of: TimeModel.self) { response in
+            .responseDecodable(of: Entity.self) { response in
                 switch response.result {
                 case .success(let result):
-                    print(result)
+                    completionHandler(result)
                 case .failure(let error):
                         print(error.localizedDescription)
                 }

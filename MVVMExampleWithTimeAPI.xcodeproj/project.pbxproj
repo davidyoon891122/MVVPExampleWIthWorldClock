@@ -16,9 +16,12 @@
 		AD92AA3727C7B89300CC9488 /* MVVMExampleWithTimeAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA3627C7B89300CC9488 /* MVVMExampleWithTimeAPIUITests.swift */; };
 		AD92AA3927C7B89300CC9488 /* MVVMExampleWithTimeAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA3827C7B89300CC9488 /* MVVMExampleWithTimeAPIUITestsLaunchTests.swift */; };
 		AD92AA4727C7B97000CC9488 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD92AA4627C7B97000CC9488 /* SnapKit */; };
-		AD92AA4927C7BC7800CC9488 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA4827C7BC7800CC9488 /* TimeModel.swift */; };
-		AD92AA4D27C7BCBF00CC9488 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA4C27C7BCBF00CC9488 /* NetworkManager.swift */; };
+		AD92AA4927C7BC7800CC9488 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA4827C7BC7800CC9488 /* Entity.swift */; };
+		AD92AA4D27C7BCBF00CC9488 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA4C27C7BCBF00CC9488 /* Repository.swift */; };
 		AD92AA5027C7BCCF00CC9488 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD92AA4F27C7BCCF00CC9488 /* Alamofire */; };
+		AD92AA5227C7BF3D00CC9488 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA5127C7BF3D00CC9488 /* ViewModel.swift */; };
+		AD92AA5527C7C0C400CC9488 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA5427C7C0C400CC9488 /* Model.swift */; };
+		AD92AA5727C7C0E200CC9488 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92AA5627C7C0E200CC9488 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +54,11 @@
 		AD92AA3227C7B89300CC9488 /* MVVMExampleWithTimeAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMExampleWithTimeAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD92AA3627C7B89300CC9488 /* MVVMExampleWithTimeAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExampleWithTimeAPIUITests.swift; sourceTree = "<group>"; };
 		AD92AA3827C7B89300CC9488 /* MVVMExampleWithTimeAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExampleWithTimeAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AD92AA4827C7BC7800CC9488 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
-		AD92AA4C27C7BCBF00CC9488 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD92AA4827C7BC7800CC9488 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		AD92AA4C27C7BCBF00CC9488 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		AD92AA5127C7BF3D00CC9488 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		AD92AA5427C7C0C400CC9488 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AD92AA5627C7C0E200CC9488 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +114,13 @@
 				AD92AA1527C7B89100CC9488 /* AppDelegate.swift */,
 				AD92AA1727C7B89100CC9488 /* SceneDelegate.swift */,
 				AD92AA4B27C7BCAC00CC9488 /* Scene */,
-				AD92AA4A27C7BCA500CC9488 /* Model */,
+				AD92AA4A27C7BCA500CC9488 /* Entity */,
 				AD92AA1E27C7B89300CC9488 /* Assets.xcassets */,
 				AD92AA2027C7B89300CC9488 /* LaunchScreen.storyboard */,
 				AD92AA2327C7B89300CC9488 /* Info.plist */,
-				AD92AA4C27C7BCBF00CC9488 /* NetworkManager.swift */,
+				AD92AA5327C7BFF100CC9488 /* Repository */,
+				AD92AA5427C7C0C400CC9488 /* Model.swift */,
+				AD92AA5627C7C0E200CC9488 /* Service.swift */,
 			);
 			path = MVVMExampleWithTimeAPI;
 			sourceTree = "<group>";
@@ -134,20 +142,29 @@
 			path = MVVMExampleWithTimeAPIUITests;
 			sourceTree = "<group>";
 		};
-		AD92AA4A27C7BCA500CC9488 /* Model */ = {
+		AD92AA4A27C7BCA500CC9488 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				AD92AA4827C7BC7800CC9488 /* TimeModel.swift */,
+				AD92AA4827C7BC7800CC9488 /* Entity.swift */,
 			);
-			path = Model;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		AD92AA4B27C7BCAC00CC9488 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				AD92AA1927C7B89100CC9488 /* ViewController.swift */,
+				AD92AA5127C7BF3D00CC9488 /* ViewModel.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		AD92AA5327C7BFF100CC9488 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AD92AA4C27C7BCBF00CC9488 /* Repository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,10 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD92AA5527C7C0C400CC9488 /* Model.swift in Sources */,
 				AD92AA1A27C7B89100CC9488 /* ViewController.swift in Sources */,
 				AD92AA1627C7B89100CC9488 /* AppDelegate.swift in Sources */,
-				AD92AA4D27C7BCBF00CC9488 /* NetworkManager.swift in Sources */,
-				AD92AA4927C7BC7800CC9488 /* TimeModel.swift in Sources */,
+				AD92AA4D27C7BCBF00CC9488 /* Repository.swift in Sources */,
+				AD92AA5727C7C0E200CC9488 /* Service.swift in Sources */,
+				AD92AA4927C7BC7800CC9488 /* Entity.swift in Sources */,
+				AD92AA5227C7BF3D00CC9488 /* ViewModel.swift in Sources */,
 				AD92AA1827C7B89100CC9488 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

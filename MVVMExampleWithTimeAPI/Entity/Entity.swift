@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct TimeModel: Decodable {
+struct Entity: Decodable {
     let currentDateTime: String
 }

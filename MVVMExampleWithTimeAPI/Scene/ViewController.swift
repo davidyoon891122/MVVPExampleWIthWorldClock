@@ -7,6 +7,21 @@
 
 import UIKit
 import SnapKit
+/*
+ Repository
+ 
+ Entity(Model)
+ 
+ Mapper
+ 
+ Model(Model)
+ 
+ Logic
+ 
+ ViewModel(Model)
+ 
+ View
+ */
 
 class ViewController: UIViewController {
     
@@ -35,6 +50,7 @@ class ViewController: UIViewController {
         button.setTitle("Yesterday", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
+        button.addTarget(self, action: #selector(onYesterday), for: .touchUpInside)
         return button
     }()
     
@@ -43,6 +59,8 @@ class ViewController: UIViewController {
         button.setTitle("Now", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
+        button.addTarget(self, action: #selector(onNow), for: .touchUpInside)
+
         return button
     }()
     
@@ -51,16 +69,21 @@ class ViewController: UIViewController {
         button.setTitle("Tomorrow", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
+        button.addTarget(self, action: #selector(onTomorrow), for: .touchUpInside)
+
         return button
     }()
     
-    
+    private let viewModel = ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         setLayoutConstraints()
-        NetworkManager().requestTime()
+        viewModel.onUpdated = { [weak self] in
+            self?.timeLabel.text  = self?.viewModel.dateTimeString
+        }
+        viewModel.reload()
     }
 }
 
@@ -84,6 +107,20 @@ private extension ViewController {
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
         }
+    }
+    
+    @objc func onYesterday() {
+        viewModel.moveDay(day: -1)
+    }
+    
+    @objc func onNow() {
+        timeLabel.text = "Loading..."
+        
+        viewModel.reload()
+    }
+    
+    @objc func onTomorrow() {
+        viewModel.moveDay(day: 1)
     }
 }
 
